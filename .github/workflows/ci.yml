@@ -45,3 +45,10 @@ jobs:
         with:
           name: surefire-reports
           path: target/surefire-reports/
+
+      - name: Publish Jacoco Coverage Report
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: jacoco-reports
+          path: target/site/jacoco/
