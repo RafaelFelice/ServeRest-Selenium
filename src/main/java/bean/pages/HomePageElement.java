@@ -1,4 +1,4 @@
-package test.bean.pages;
+package bean.pages;
 
 import org.openqa.selenium.By;
 

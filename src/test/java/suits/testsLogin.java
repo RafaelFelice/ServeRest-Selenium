@@ -1,13 +1,13 @@
-package test.suits;
+package suits;
 
 import org.json.simple.JSONObject;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import test.bean.action.HomePageAction;
-import test.bean.action.LoginPageAction;
-import test.hooks.DriverLoading;
-import test.utils.jsonObject;
+import bean.action.HomePageAction;
+import bean.action.LoginPageAction;
+import hooks.DriverLoading;
+import utils.jsonObject;
 
 import static org.junit.Assert.assertTrue;
 

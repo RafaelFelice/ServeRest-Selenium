@@ -64,7 +64,11 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>3.0.0-M5</version>
           <configuration>
-            <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
+            <testSourceDirectory>src/test/java</testSourceDirectory>
+            <includes>
+              <include>**/*Test.java</include>
+              <include>**/Test*.java</include>
+            </includes>
           </configuration>
         </plugin>
 

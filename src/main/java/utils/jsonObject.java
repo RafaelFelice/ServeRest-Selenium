@@ -1,4 +1,4 @@
-package test.utils;
+package utils;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -19,7 +19,7 @@ public class jsonObject {
         JSONObject jsonDataObject = null;
         try {
             // inserindo o arquivo json em um objeto
-            Object jsonFileObject = parser.parse(new FileReader(new File("src/main/java/test/data/" + jsonFileName + ".json")
+            Object jsonFileObject = parser.parse(new FileReader(new File("src/main/java/data/" + jsonFileName + ".json")
             ));
 
             // convertendo o objeto com o arquivo json para o formato de objeto json

@@ -1,20 +1,11 @@
-package test.hooks;
+package hooks;
 
-import org.apache.commons.io.FileUtils;
-import org.junit.Rule;
-import org.junit.rules.TestName;
 import org.openqa.selenium.NoSuchSessionException;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.Browser;
 import org.openqa.selenium.remote.RemoteWebDriver;
-
-import java.io.File;
-import java.io.IOException;
 
 public class DriverLoading {
     private static WebDriver driver; //instancia do webdriver

@@ -1,7 +1,7 @@
-package test.bean.action;
+package bean.action;
 
-import test.bean.dsl.Commands;
-import test.bean.pages.HomePageElement;
+import bean.dsl.Commands;
+import bean.pages.HomePageElement;
 
 public class HomePageAction extends Commands {
 

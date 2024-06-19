@@ -1,7 +1,7 @@
-package test.bean.action;
+package bean.action;
 
-import test.bean.dsl.Commands;
-import test.bean.pages.RegisterUserPageElement;
+import bean.dsl.Commands;
+import bean.pages.RegisterUserPageElement;
 
 public class RegisterUserPageAction extends Commands {
 
