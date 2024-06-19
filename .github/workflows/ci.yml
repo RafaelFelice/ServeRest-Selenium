@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
 
 jobs:
   build:
@@ -40,7 +40,7 @@ jobs:
         run: mvn test
 
       - name: Publish Surefire Test Report
-        if: always() # This ensures the step runs even if previous steps fail
+        if: always()
         uses: actions/upload-artifact@v2
         with:
           name: surefire-reports
