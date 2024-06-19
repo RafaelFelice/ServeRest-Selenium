@@ -1,0 +1,29 @@
+{
+  "LoginUser": {
+    "email": "testeselenium@qa.com",
+    "password": "testeselenium",
+
+    "emailIncorrect": "incorrectselenium@qa.com",
+    "passwordIncorrect": "incorrect",
+
+    "emailEmpty": "",
+    "passwordEmpty": ""
+  },
+
+
+  "RegisterUser" : {
+    "name": "Teste Selenium",
+    "email": "testeselenium@qa.com",
+    "password": "testeselenium",
+
+    "emailIncorrect": "incorrectselenium@qa.com",
+    "passwordIncorrect": "incorrect",
+
+    "emailUsed": "testeselenium@qa.com",
+
+    "nameEmpty": "",
+    "emailEmpty": "",
+    "passwordEmpty": ""
+  }
+
+}
