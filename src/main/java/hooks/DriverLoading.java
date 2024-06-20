@@ -8,9 +8,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class DriverLoading {
-    private static WebDriver driver; //instancia do webdriver
+    private static WebDriver driver;
 
-    private DriverLoading() { //construtor - para acessar algo dessa classe precisa ser por um método publico estático, no caso seria o getDriver
+    private DriverLoading() {
     }
 
     public static Browser browser = Browser.CHROME;
@@ -48,16 +48,5 @@ public class DriverLoading {
             driver = null;
         }
     }
-
-//    @Rule
-//    public static TestName testName = new  TestName();
-//
-//    public static void takeScreenshot() throws IOException {
-//        if (driver != null) {
-//            TakesScreenshot screenshot = (TakesScreenshot) driver;
-//            File file = screenshot.getScreenshotAs(OutputType.FILE);
-//            FileUtils.copyFile(file, new File(testName.getMethodName() + ".jpg"));
-//        }
-//    }
 
 }

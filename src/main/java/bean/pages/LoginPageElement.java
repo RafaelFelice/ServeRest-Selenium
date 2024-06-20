@@ -4,9 +4,6 @@ import org.openqa.selenium.By;
 
 public class LoginPageElement {
 
-    //por que mapear os elementos com public final?
-    //promover melhores práticas de desenvolvimento, como encapsulamento, imutabilidade e clareza do código. Isso contribui para um código mais robusto, fácil de manter e entender.
-
     public final By inputEmail = By.id("email");
     public final By inputPassword = By.id("password");
     public final By buttonEntrar = By.xpath("//button[text()='Entrar']");

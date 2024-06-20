@@ -11,8 +11,6 @@ import hooks.DriverLoading;
 
 import java.time.Duration;
 
-// Essa class tem por objetivo substituir os métodos genéricos do Selenium por métodos bem descritivos/ específicos
-// centralizando a forma de execução e evitando repetição de código.
 
 public class Commands {
     private static final Duration DEFAULT_TIME_WAIT = Duration.ofSeconds(20);

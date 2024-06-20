@@ -3,7 +3,7 @@ package suits;
 import org.json.simple.JSONObject;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import bean.action.HomePageAction;
 import bean.action.LoginPageAction;
 import bean.action.RegisterUserPageAction;
