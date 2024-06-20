@@ -13,22 +13,13 @@ public class DriverLoading {
     private DriverLoading() {
     }
 
-    public static Browser browser = Browser.CHROME;
-    public enum Browser{
-        CHROME,
-        FIREFOX
-    }
-
     public static WebDriver getDriver() {
         if (driver == null) {
-            switch (browser){
-                case FIREFOX: driver = new FirefoxDriver(); break;
-                case CHROME: driver = new ChromeDriver(); break;
-            }
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--remote-allow-origins=*");
 
             System.setProperty("webdriver.chrome.driver", "C:\\Users\\rafae\\driver\\chromedriver.exe");
+            driver = new ChromeDriver(options);
             driver.manage().window().maximize();
             driver.get("https://front.serverest.dev/login");
         }
