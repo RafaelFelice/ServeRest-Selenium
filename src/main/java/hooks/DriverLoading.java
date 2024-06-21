@@ -18,7 +18,7 @@ public class DriverLoading {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--remote-allow-origins=*");
 
-            System.setProperty("webdriver.chrome.driver", "C:\\Users\\rafae\\driver\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "C:\\Selenium-ServeRest\\src\\test\\resources\\chromedriver.exe");
             driver = new ChromeDriver(options);
             driver.manage().window().maximize();
             driver.get("https://front.serverest.dev/login");
