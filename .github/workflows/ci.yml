@@ -27,11 +27,10 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-maven
 
-      - name: Ensure ChromeDriver path
-        run: |
-          echo "Verifying ChromeDriver path"
-          icacls "C:\\Selenium-ServeRest\\chromedriver.exe" /grant Everyone:F
-          dir C:\\Selenium-ServeRest
+      - name: Set up ChromeDriver
+        uses: nanasess/setup-chromedriver@v1
+        with:
+          chromedriver-path: C:\\Selenium-ServeRest\\chromedriver.exe
 
       - name: Set up Chrome
         uses: browser-actions/setup-chrome@v1
