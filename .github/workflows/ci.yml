@@ -29,6 +29,11 @@ jobs:
           Remove-Item chromedriver.zip
         shell: pwsh
 
+      - name: List contents of C:\Selenium-ServeRest
+        run: |
+          Get-ChildItem -Path C:\Selenium-ServeRest
+        shell: pwsh
+
       - name: Set up Chrome
         uses: browser-actions/setup-chrome@v1
 
