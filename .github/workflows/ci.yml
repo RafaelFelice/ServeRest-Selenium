@@ -23,7 +23,8 @@ jobs:
       - name: Download and setup Chromedriver
         run: |
           mkdir C:\Selenium-ServeRest
-          Invoke-WebRequest -Uri https://chromedriver.storage.googleapis.com/126.0.6478.62/chromedriver_win32.zip -OutFile chromedriver.zip
+          $url = 'https://storage.googleapis.com/chrome-for-testing-public/126.0.6478.63/win32/chrome-win32.zip'
+          Invoke-WebRequest -Uri $url -OutFile chromedriver.zip
           Expand-Archive chromedriver.zip -DestinationPath C:\Selenium-ServeRest
           Remove-Item chromedriver.zip
         shell: pwsh
