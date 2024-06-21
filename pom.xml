@@ -73,10 +73,6 @@
           <includes>
             <include>suits/**/*.java</include>
           </includes>
-          <!-- System properties for WebDriverManager -->
-          <systemPropertyVariables>
-            <webdriver.chrome.driver>webdrivermanager</webdriver.chrome.driver>
-          </systemPropertyVariables>
         </configuration>
       </plugin>
 
