@@ -1,13 +1,13 @@
 package suits;
 
-import org.json.simple.JSONObject;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import bean.action.HomePageAction;
 import bean.action.LoginPageAction;
 import bean.action.RegisterUserPageAction;
 import hooks.DriverLoading;
+import org.json.simple.JSONObject;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import utils.jsonObject;
 
 public class testsRegisterUser {
@@ -16,6 +16,7 @@ public class testsRegisterUser {
     RegisterUserPageAction registerUserPageAction = new RegisterUserPageAction();
     HomePageAction homePageAction = new HomePageAction();
     JSONObject registerJson;
+
 
     @BeforeEach
     public void setUp() {
@@ -29,12 +30,9 @@ public class testsRegisterUser {
     }
 
     @Test
-    public void registerUserSuccessful(){
+    public void registerUserSuccessfulFaker(){
         loginPageAction.clickLinkRegistrar();
-        registerUserPageAction.inputDataRegisterUser(
-                (String) registerJson.get("name"),
-                (String) registerJson.get("email"),
-                (String) registerJson.get("password"));
+        registerUserPageAction.generateDataUserFaker();
         registerUserPageAction.clickButtonRegister();
         homePageAction.checkTextWelcome();
     }
