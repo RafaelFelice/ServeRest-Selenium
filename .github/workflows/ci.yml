@@ -24,7 +24,7 @@ jobs:
         run: |
           mkdir C:\Selenium-ServeRest
           Invoke-WebRequest -Uri https://storage.googleapis.com/chrome-for-testing-public/126.0.6478.63/win32/chromedriver-win32.zip -OutFile chromedriver.zip
-          Expand-Archive chromedriver.zip -DestinationPath C:\Selenium-ServeRest\
+          Expand-Archive chromedriver.zip -DestinationPath C:\\Selenium-ServeRest\\chromedriver.exe"
           Remove-Item chromedriver.zip
         shell: pwsh
 
