@@ -25,12 +25,12 @@ jobs:
 
       - name: Set Chromedriver environment variable
         run: |
-          $env:webdriver_chrome_driver='C:\Selenium-ServeRest\chromedriver.exe'
+          $env:webdriver_chrome_driver='Selenium-ServeRest\chromedriver.exe'
         shell: pwsh
 
       - name: Check Chromedriver Permissions
         run: |
-          Get-ChildItem -Path C:\Selenium-ServeRest\chromedriver.exe | Format-List -Property Name, Mode
+          Get-ChildItem -Path Selenium-ServeRest\chromedriver.exe | Format-List -Property Name, Mode
         shell: pwsh
 
       - name: Build with Maven
@@ -39,7 +39,7 @@ jobs:
       - name: Run tests with Maven
         run: mvn test
         env:
-          webdriver.chrome.driver: C:\Selenium-ServeRest\chromedriver.exe
+          webdriver.chrome.driver: Selenium-ServeRest\chromedriver.exe
 
       - name: Publish Surefire Test Report
         if: always()
