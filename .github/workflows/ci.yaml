@@ -31,9 +31,14 @@ jobs:
       - name: Set up Chrome
         uses: browser-actions/setup-chrome@v1
 
-      - name: List contents of Selenium-ServeRest directory
+      - name: Set Chromedriver environment variable
         run: |
-          Get-ChildItem -Path C:\Selenium-ServeRest -Recurse | Format-List -Property FullName, Mode
+          $env:webdriver_chrome_driver='C:\Selenium-ServeRest\chromedriver-win32\chromedriver.exe'
+        shell: pwsh
+
+      - name: Check Chromedriver Permissions
+        run: |
+          Get-ChildItem -Path C:\Selenium-ServeRest\chromedriver-win32\chromedriver.exe | Format-List -Property Name, Mode
         shell: pwsh
 
       - name: Build with Maven
@@ -41,6 +46,8 @@ jobs:
 
       - name: Run tests with Maven
         run: mvn test
+        env:
+          webdriver.chrome.driver: C:\Selenium-ServeRest\chromedriver-win32\chromedriver.exe
 
       - name: Publish Surefire Test Report
         if: always()
