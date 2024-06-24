@@ -23,13 +23,14 @@ jobs:
       - name: Set up Chrome
         uses: browser-actions/setup-chrome@v1
 
-      - name: Verify Chromedriver Path
+      - name: Set Chromedriver environment variable
         run: |
-          if (Test-Path './chromedriver.exe') {
-            Write-Host "Chromedriver exists at specified path."
-          } else {
-            Write-Error "Chromedriver not found at specified path."
-          }
+          $env:webdriver_chrome_driver='.\chromedriver.exe'
+        shell: pwsh
+
+      - name: Check Chromedriver Permissions
+        run: |
+          Get-ChildItem -Path .\chromedriver.exe | Format-List -Property Name, Mode
         shell: pwsh
 
       - name: Build with Maven
@@ -38,7 +39,7 @@ jobs:
       - name: Run tests with Maven
         run: mvn test
         env:
-          WEBDRIVER_CHROME_DRIVER: ./chromedriver.exe
+          webdriver.chrome.driver: .\chromedriver.exe
 
       - name: Publish Surefire Test Report
         if: always()
