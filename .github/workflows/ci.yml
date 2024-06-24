@@ -24,12 +24,17 @@ jobs:
         run: |
           mkdir C:\Selenium-ServeRest
           Invoke-WebRequest -Uri https://storage.googleapis.com/chrome-for-testing-public/126.0.6478.63/win32/chromedriver-win32.zip -OutFile chromedriver.zip
-          Expand-Archive chromedriver.zip -DestinationPath C:\\Selenium-ServeRest\\chromedriver.exe"
+          Expand-Archive chromedriver.zip -DestinationPath C:\Selenium-ServeRest
           Remove-Item chromedriver.zip
         shell: pwsh
 
       - name: Set up Chrome
         uses: browser-actions/setup-chrome@v1
+
+      - name: List contents of Selenium-ServeRest directory
+        run: |
+          Get-ChildItem -Path C:\Selenium-ServeRest -Recurse | Format-List -Property FullName, Mode
+        shell: pwsh
 
       - name: Check Chromedriver Permissions
         run: |
