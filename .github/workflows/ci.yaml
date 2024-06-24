@@ -20,25 +20,17 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
 
-      - name: Download and setup Chromedriver
-        run: |
-          mkdir C:\Selenium-ServeRest
-          Invoke-WebRequest -Uri https://storage.googleapis.com/chrome-for-testing-public/126.0.6478.63/win32/chromedriver-win32.zip -OutFile chromedriver.zip
-          Expand-Archive chromedriver.zip -DestinationPath C:\Selenium-ServeRest
-          Remove-Item chromedriver.zip
-        shell: pwsh
-
       - name: Set up Chrome
         uses: browser-actions/setup-chrome@v1
 
       - name: Set Chromedriver environment variable
         run: |
-          $env:webdriver_chrome_driver='C:\Selenium-ServeRest\chromedriver-win32\chromedriver.exe'
+          $env:webdriver_chrome_driver='C:\Selenium-ServeRest\chromedriver.exe'
         shell: pwsh
 
       - name: Check Chromedriver Permissions
         run: |
-          Get-ChildItem -Path C:\Selenium-ServeRest\chromedriver-win32\chromedriver.exe | Format-List -Property Name, Mode
+          Get-ChildItem -Path C:\Selenium-ServeRest\chromedriver.exe | Format-List -Property Name, Mode
         shell: pwsh
 
       - name: Build with Maven
@@ -47,7 +39,7 @@ jobs:
       - name: Run tests with Maven
         run: mvn test
         env:
-          webdriver.chrome.driver: C:\Selenium-ServeRest\chromedriver-win32\chromedriver.exe
+          webdriver.chrome.driver: C:\Selenium-ServeRest\chromedriver.exe
 
       - name: Publish Surefire Test Report
         if: always()
