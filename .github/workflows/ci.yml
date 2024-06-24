@@ -36,11 +36,6 @@ jobs:
           Get-ChildItem -Path C:\Selenium-ServeRest -Recurse | Format-List -Property FullName, Mode
         shell: pwsh
 
-      - name: Check Chromedriver Permissions
-        run: |
-          Get-ChildItem -Path C:\Selenium-ServeRest\chromedriver.exe | Format-List -Property Name, Mode
-        shell: pwsh
-
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
